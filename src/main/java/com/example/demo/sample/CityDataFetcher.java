@@ -9,14 +9,11 @@ import graphql.schema.DataFetcher;
 
 @Component
 public class CityDataFetcher {
+	static public List<CityEntity> CityEntityDatabase;
 
 	public DataFetcher<?> allCities () {
 		return environment -> {
-			List<CityEntity> res = new ArrayList<>();
-			for(int i = 0 ; i < 10; i++){
-				res.add(CityEntity.builder().id(i).name("temp"+i).population(123*i).build());
-			}
-			return res;
+			return CityEntityDatabase;
 		};
 	}
 	public DataFetcher<?> city () {
@@ -25,4 +22,14 @@ public class CityDataFetcher {
 			return CityEntity.builder().id(1).name("temp").population(123).build();
 		};
 	}
+	public DataFetcher<?> putCity () {
+		return environment -> {
+			int id = environment.getArgument("id");
+			String name = environment.getArgument("name");
+			CityEntity newCity = CityEntity.builder().id(id).name(name).build();
+			CityEntityDatabase.add(newCity);
+			return newCity;
+		};
+	}
+
 }
