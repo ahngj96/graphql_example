@@ -39,6 +39,18 @@ public class PostService {
 		return PostDataBase.get(id.intValue());
 	}
 
+	//{
+	//	posts{
+	//		title
+	//		isGood
+	//	}
+	//}
+	@GraphQLQuery(name = "isGood")
+	// public boolean isGood(@GraphQLContext Post post) {
+	public boolean isGood(Post post) {
+		return !post.getTitle().equals("title1");
+	}
+
 	//mutation{
 	//	savePost(post:{title:"title"}){
 	//		id
@@ -56,6 +68,12 @@ public class PostService {
 		return post;
 	}
 
+	@GraphQLMutation(name = "updatePost")
+	public Post updatePost(Post post) {
+		PostDataBase.get(post.getId().intValue()).setTitle(post.getTitle());
+		return PostDataBase.get(post.getId().intValue());
+	}
+
 	//mutation{
 	//	deletePost(id:1)
 	//}
@@ -64,16 +82,6 @@ public class PostService {
 		PostDataBase.remove(id);
 	}
 
-	//{
-	//	posts{
-	//		title
-	//		isGood
-	//	}
-	//}
-	@GraphQLQuery(name = "isGood")
-	public boolean isGood(@GraphQLContext Post post) {
-		return !post.getTitle().equals("title1");
-	}
 
 
 }
