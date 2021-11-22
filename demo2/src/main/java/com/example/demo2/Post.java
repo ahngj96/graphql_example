@@ -1,5 +1,7 @@
 package com.example.demo2;
 
+import java.util.List;
+
 import io.leangen.graphql.annotations.GraphQLQuery;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,4 +17,6 @@ public class Post {
 	private Long id;
 	@GraphQLQuery(name = "title")
 	private String title;
+	@GraphQLQuery(name = "relatePosts")
+	private List<Post> relatePosts;
 }
