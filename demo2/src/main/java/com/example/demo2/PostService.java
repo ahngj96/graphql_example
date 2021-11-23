@@ -35,8 +35,8 @@ public class PostService {
 	//	}
 	//}
 	@GraphQLQuery(name = "post")
-	public Post getPostById(Long id){
-		return PostDataBase.get(id.intValue());
+	public Post getPostById(int idx){
+		return PostDataBase.get(idx);
 	}
 
 	//{

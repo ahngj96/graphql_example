@@ -1,6 +1,6 @@
 type Query {
   allCities: [City]
-  city(id: Int): City
+  city(idx: Int): City
 }
 
 type Mutation {

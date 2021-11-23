@@ -18,8 +18,8 @@ public class CityDataFetcher {
 	}
 	public DataFetcher<?> city () {
 		return environment -> {
-			int id = environment.getArgument("id");
-			return CityEntity.builder().id(1).name("temp").population(123).build();
+			int id = environment.getArgument("idx");
+			return CityEntityDatabase.get(id);
 		};
 	}
 	public DataFetcher<?> putCity () {
