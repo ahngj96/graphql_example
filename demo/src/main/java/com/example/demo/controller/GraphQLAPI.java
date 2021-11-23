@@ -61,12 +61,12 @@ public class GraphQLAPI {
 
 	private RuntimeWiring buildWiring() {
 		return RuntimeWiring.newRuntimeWiring()
-			// .type(
-			// 	TypeRuntimeWiring
-			// 		.newTypeWiring("Query")
-			// 		.dataFetcher("allCities", dataFetcher.allCities())
-			// 		.dataFetcher("city", dataFetcher.city())
-			// )
+			.type(
+				TypeRuntimeWiring
+					.newTypeWiring("Query")
+					.dataFetcher("allCities", dataFetcher.allCities())
+					.dataFetcher("city", dataFetcher.city())
+			)
 			.type(
 				TypeRuntimeWiring
 					.newTypeWiring("Mutation")
