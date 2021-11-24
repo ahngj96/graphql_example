@@ -15,8 +15,9 @@ chmod +x gradlew
 chmod +x mvnw
 ./mvnw spring-boot:run
 ```
+
+#### demo2 프로젝트 GraphQL Mutation 쿼리 예시
 ```
-demo2 프로젝트 GraphQL Mutation 쿼리 예시
 mutatiion {
 savePost(post:{
 id: 123
