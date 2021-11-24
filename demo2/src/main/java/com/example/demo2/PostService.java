@@ -78,8 +78,14 @@ public class PostService {
 	//	deletePost(id:1)
 	//}
 	@GraphQLMutation(name = "deletePost")
-	public void deletePost(Long id) {
-		PostDataBase.remove(id);
+	public boolean deletePost(int idx) {
+		try {
+			PostDataBase.remove(idx);
+		}catch (Exception e){
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 
