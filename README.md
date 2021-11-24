@@ -1,6 +1,6 @@
 # graphql_example
 ## 각 프로젝트 실행법
-database 연결 없는 아주 간단한 GraphQL 예제로 java만 설치되어 있으면 돌아갈 것
+database 연결 없는 아주 간단한 GraphQL 예제로 java 8(아마 8 이상도 가능)만 설치되어 있으면 돌아갈 것
 
 ## demo
 
