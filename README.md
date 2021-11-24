@@ -17,6 +17,7 @@ chmod +x mvnw
 ```
 ```
 나름 복잡한 쿼리 가능
+mutatiion {
 savePost(post:{
 id: 123
 title: "test"
@@ -42,5 +43,6 @@ relatePosts:[{
       }
     }
   }
+}
 }
 ```
