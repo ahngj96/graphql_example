@@ -56,3 +56,7 @@ relatePosts:[{
 }
 }
 ```
+
+코드 출처
+https://jee-goo.tistory.com/entry/Spring-Boot-GraphQL-1-BackEnd
+https://ttubeoki.tistory.com/23
