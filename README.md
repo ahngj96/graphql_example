@@ -15,3 +15,32 @@ chmod +x gradlew
 chmod +x mvnw
 ./mvnw spring-boot:run
 ```
+```
+나름 복잡한 쿼리 가능
+savePost(post:{
+id: 123
+title: "test"
+relatePosts:[{
+  id:123123
+  title: "test_depth_1"
+  relatePosts:[{
+    id: 123123123
+    title: "test_depth_2"
+  }]
+},{
+  id:123124
+  title: "test_depth_2"
+}]}){
+    id
+    title
+    relatePosts{
+      id
+      title
+      relatePosts{
+        id
+        title
+      }
+    }
+  }
+}
+```
