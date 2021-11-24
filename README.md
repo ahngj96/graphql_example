@@ -16,7 +16,7 @@ chmod +x mvnw
 ./mvnw spring-boot:run
 ```
 ```
-나름 복잡한 쿼리 가능
+demo2 프로젝트 GraphQL Mutation 쿼리 예시
 mutatiion {
 savePost(post:{
 id: 123
